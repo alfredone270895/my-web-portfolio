@@ -1,6 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import TypeWriterEffect from 'typewriter-effect';
-import Goo from 'gooey-react';
 
 /**
  * Application home
