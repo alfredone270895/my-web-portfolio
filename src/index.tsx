@@ -1,10 +1,12 @@
+import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-vertical-timeline-component/style.min.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
-import './index.css';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

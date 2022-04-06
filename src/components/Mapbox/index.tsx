@@ -8,7 +8,7 @@ mapboxgl.accessToken =
  * Application map
  * @constructor
  */
-const Mapbox = () => {
+const Mapbox: React.FC = () => {
   const mapContainerRef = useRef(null);
 
   const [lng, setLng] = useState<number>(9.27834);

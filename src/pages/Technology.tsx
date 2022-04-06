@@ -2,10 +2,6 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import ParticlesBg from 'particles-bg';
 
-/**
- * Technology used
- * @constructor
- */
 export const Technology: React.FC = () => {
   return (
     <Container>

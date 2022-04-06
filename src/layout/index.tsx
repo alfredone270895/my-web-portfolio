@@ -3,9 +3,9 @@ import ParticlesBg from 'particles-bg';
 import { useTranslation } from 'react-i18next';
 
 import '../i18n';
-import { Body } from './Body';
 import { Footer } from './Footer';
 import { Header } from './Header';
+import { AppRoutes } from '../routes';
 
 export const Layout: React.FC = () => {
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ export const Layout: React.FC = () => {
     >
       <ParticlesBg type="cobweb" bg={true} />
       <Header />
-      <Body />
+      <AppRoutes />
       <Footer />
     </IntlContext.Provider>
   );

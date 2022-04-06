@@ -1,7 +1,7 @@
 import React from 'react';
 import { TFunction } from 'i18next';
 
-export type LanguageContext = {
+type LanguageContext = {
   t: TFunction;
 };
 

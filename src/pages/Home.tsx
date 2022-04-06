@@ -1,5 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import TypeWriterEffect from 'typewriter-effect';
+import TypeWriterEffect, { TypewriterClass } from 'typewriter-effect';
 import { typeWriterEffectReload } from '../utils/typewriter';
 
 const TYPE_WRITER_STRINGS = [
@@ -26,7 +26,7 @@ export const Home: React.FC = () => {
                 autoStart: true,
                 loop: true,
               }}
-              onInit={(typewriter) =>
+              onInit={(typewriter: TypewriterClass): void =>
                 typeWriterEffectReload(typewriter, TYPE_WRITER_STRINGS)
               }
             />

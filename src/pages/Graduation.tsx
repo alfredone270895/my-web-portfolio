@@ -7,11 +7,6 @@ import { Fragment } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 
-/**
- * Graduation
-  traslations
- * @constructor
- */
 export const Graduation: React.FC = () => {
   return (
     <Fragment>

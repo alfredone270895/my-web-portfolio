@@ -1,4 +1,3 @@
-import 'react-vertical-timeline-component/style.min.css';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -7,11 +6,6 @@ import { Fragment } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 
-/**
- * Job experience
-  translations
- * @constructor
- */
 export const JobExperience: React.FC = () => {
   return (
     <Fragment>
