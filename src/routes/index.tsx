@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { JobExperience } from '../pages/JobExperience';
 import { Home } from '../pages/Home';
+import { JobExperience } from '../pages/Job';
 import { Graduation } from '../pages/Graduation';
 import { Technology } from '../pages/Technology';
 import { Contact } from '../pages/Contact';
