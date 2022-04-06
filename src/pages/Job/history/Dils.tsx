@@ -1,5 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
+
 import { TimelineTitle } from '../../../components/Timeline/TimelineTitle';
 import { LineBreak } from '../../../components/LineBreak';
 

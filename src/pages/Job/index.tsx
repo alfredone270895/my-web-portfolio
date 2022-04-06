@@ -4,6 +4,7 @@ import {
 } from 'react-vertical-timeline-component';
 import { Fragment } from 'react';
 import { Icon } from '@iconify/react';
+
 import { Parsimpex } from './history/Parsimpex';
 import { ValoreAiVeterani } from './history/ValoreAiVeterani';
 import { Dils } from './history/Dils';

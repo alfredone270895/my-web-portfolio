@@ -5,7 +5,7 @@ mapboxgl.accessToken =
   'pk.eyJ1IjoiYWxmcmVkb25lOTUiLCJhIjoiY2tuZjF6dDJ2MnFqMDJ1bng2enNlZWtjbiJ9.r_cnkptBHDWp8e0_VKIJnQ';
 
 /**
- * Application map
+ * Application map with mapbox
  * @constructor
  */
 const Mapbox: React.FC = () => {

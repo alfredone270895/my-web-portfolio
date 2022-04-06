@@ -11,10 +11,6 @@ const TYPE_WRITER_STRINGS = [
   'Appasionate by Nature and Life 🦁',
 ];
 
-/**
- * Application home
- * @constructor
- */
 export const Home: React.FC = () => {
   return (
     <Container fluid className="vh-100">

@@ -5,10 +5,6 @@ import { Graduation } from '../pages/Graduation';
 import { Technology } from '../pages/Technology';
 import { Contact } from '../pages/Contact';
 
-/**
- * Application routes
- * @constructor
- */
 export const AppRoutes: React.FC = () => {
   return (
     <BrowserRouter>
