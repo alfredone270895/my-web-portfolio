@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl, { LngLatLike } from 'mapbox-gl';
+
 mapboxgl.accessToken =
   'pk.eyJ1IjoiYWxmcmVkb25lOTUiLCJhIjoiY2tuZjF6dDJ2MnFqMDJ1bng2enNlZWtjbiJ9.r_cnkptBHDWp8e0_VKIJnQ';
 
@@ -7,7 +8,7 @@ mapboxgl.accessToken =
  * Application map
  * @constructor
  */
-const Map = () => {
+const Mapbox = () => {
   const mapContainerRef = useRef(null);
 
   const [lng, setLng] = useState<number>(9.27834);
@@ -86,4 +87,4 @@ mapboxgl.workerClass =
   // eslint-disable-next-line import/no-webpack-loader-syntax
   require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
-export default Map;
+export default Mapbox;

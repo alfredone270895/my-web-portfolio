@@ -1,24 +1,25 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Poppins:wght@700&display=swap');
+
+body, html {
+  margin:0;
+  font-family: 'Montserrat', sans-serif;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.particles-bg-canvas-self{
+
+.particles-bg-canvas-self {
   opacity: 0.1;
 }
+
 .map-container {
   margin-top: 100px;
   margin-bottom: 100px;
   min-height: 100vh;
-  min-width: 100vh;
   position: relative;
   top: 0;
   bottom: 0;
@@ -30,7 +31,8 @@ code {
   display: inline-block;
   position: absolute;
   top: 100px;
-  left: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 12px;
   background-color: #404040;
   color: #ffffff;
@@ -47,16 +49,16 @@ code {
   border-radius: 50%;
   cursor: pointer;
 }
+
 .mapboxgl-popup {
   max-width: 200px;
 }
+
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
 
-.language-drop{
+.language-drop {
   background-color: #212529;
 }
-
-

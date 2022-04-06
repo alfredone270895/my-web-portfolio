@@ -1,18 +1,12 @@
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
-import { TFunction } from 'i18next';
 import ParticlesBg from 'particles-bg';
-
-type TechProps = {
-  t: TFunction;
-};
 
 /**
  * Technology used
- * @param t
  * @constructor
  */
-export const Technology: React.FC<TechProps> = ({ t }) => {
+export const Technology: React.FC = () => {
   return (
     <Container>
       <Row className="mt-5">

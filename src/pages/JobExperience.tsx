@@ -4,20 +4,15 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import { Fragment } from 'react';
-import { TFunction } from 'react-i18next';
 import { Col, Row } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 
-type JobExperienceProps = {
-  t: TFunction;
-};
-
 /**
  * Job experience
- * @param t traslations
+  translations
  * @constructor
  */
-export const JobExperience: React.FC<JobExperienceProps> = ({ t }) => {
+export const JobExperience: React.FC = () => {
   return (
     <Fragment>
       <VerticalTimeline>
@@ -42,16 +37,6 @@ export const JobExperience: React.FC<JobExperienceProps> = ({ t }) => {
           iconStyle={{ background: '#ffffff', color: '#000000' }}
           icon={<Icon icon="bytesize:work" />}
         >
-          <Row>
-            <Col>
-              <img
-                src="/assets/logos/parsimpex.png"
-                width={80}
-                height={80}
-                alt={'parsimpex'}
-              />
-            </Col>
-          </Row>
           <Row>
             <Col>
               <h3 className="vertical-timeline-element-title">
@@ -276,28 +261,12 @@ export const JobExperience: React.FC<JobExperienceProps> = ({ t }) => {
         >
           <Row>
             <Col>
-              <img
-                src="/assets/logos/gva.png"
-                width={80}
-                height={80}
-                alt={'gva'}
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <h3 className="vertical-timeline-element-title">
-                Gva redilco S.P.A
-              </h3>
+              <h3 className="vertical-timeline-element-title">Dils S.P.A</h3>
               <h4 className="vertical-timeline-element-subtitle">
                 Full stack developer
               </h4>
-              <a
-                target="_blank"
-                href="https://gvaredilco-sigest.com/"
-                rel="noreferrer"
-              >
-                https://gvaredilco-sigest.com/
+              <a target="_blank" href="https://dils.com/" rel="noreferrer">
+                https://dils.com
               </a>
             </Col>
           </Row>

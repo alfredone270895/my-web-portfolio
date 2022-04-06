@@ -4,20 +4,15 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import { Fragment } from 'react';
-import { TFunction } from 'react-i18next';
 import { Col, Row } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 
-type GraduationProps = {
-  t: TFunction;
-};
-
 /**
  * Graduation
- * @param t traslations
+  traslations
  * @constructor
  */
-export const Graduation: React.FC<GraduationProps> = ({ t }) => {
+export const Graduation: React.FC = () => {
   return (
     <Fragment>
       <VerticalTimeline>

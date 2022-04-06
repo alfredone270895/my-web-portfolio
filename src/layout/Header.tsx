@@ -1,22 +1,9 @@
-import { i18n, TFunction } from 'i18next';
 import { Navbar } from 'react-bootstrap';
 import Headroom from 'react-headroom';
 
 import { HeaderMenu } from './HeaderMenu';
 
-type HeaderProps = {
-  t: TFunction;
-  i18n: i18n;
-};
-
-/**
- * Header of application
- * @param t Translation function
- * @param i18n
- * @constructor
- */
-// eslint-disable-next-line @typescript-eslint/no-shadow
-export const Header: React.FC<HeaderProps> = ({ t, i18n }) => {
+export const Header: React.FC = () => {
   return (
     <>
       <Headroom
@@ -27,7 +14,7 @@ export const Header: React.FC<HeaderProps> = ({ t, i18n }) => {
         }}
       >
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <HeaderMenu t={t} i18n={i18n} />
+          <HeaderMenu />
         </Navbar>
       </Headroom>
     </>

@@ -1,28 +1,23 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { TFunction } from 'i18next';
-import { JobExperience } from '../app/JobExperience';
-import { Home } from '../app/Home';
-import { Graduation } from '../app/Graduation';
-import { Technology } from '../app/Technology';
-import { Contact } from '../app/Contact';
+import { JobExperience } from '../pages/JobExperience';
+import { Home } from '../pages/Home';
+import { Graduation } from '../pages/Graduation';
+import { Technology } from '../pages/Technology';
+import { Contact } from '../pages/Contact';
 
-type AppRoutesProps = {
-  t: TFunction;
-};
 /**
  * Application routes
- * @param t
  * @constructor
  */
-export const AppRoutes: React.FC<AppRoutesProps> = ({ t }) => {
+export const AppRoutes: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/technology" element={<Technology t={t} />} />
-        <Route path="/graduation" element={<Graduation t={t} />} />
-        <Route path="/contact" element={<Contact t={t} />} />
-        <Route path="/job-experience" element={<JobExperience t={t} />} />
+        <Route path="/technology" element={<Technology />} />
+        <Route path="/graduation" element={<Graduation />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/job-experience" element={<JobExperience />} />
       </Routes>
     </BrowserRouter>
   );

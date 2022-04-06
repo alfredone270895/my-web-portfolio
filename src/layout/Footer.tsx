@@ -1,42 +1,45 @@
-import { TFunction } from 'i18next';
 import { Icon } from '@iconify/react';
+import { useContext } from 'react';
+import { IntlContext } from '../i18n/context';
+import { Col, Container, Row } from 'react-bootstrap';
 
-type HeaderProps = {
-  t: TFunction;
-};
+const LINKEDIN_LINK =
+  'https://www.linkedin.com/in/alfredo-sergio-dallari-700864118/';
+const GITHUB_LINK = 'https://github.com/alfredone270895';
+const INSTAGRAM_LINK = 'https://www.instagram.com/a.dall95/';
 
-/**
- * Web footer
- * @param t translations
- * @constructor
- */
-export const Footer: React.FC<HeaderProps> = ({ t }) => {
+export const Footer: React.FC = () => {
+  const { t } = useContext(IntlContext);
+
   return (
     <footer className="text-center text-lg-start bg-light text-muted">
       <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
         <div className="me-5 d-none d-lg-block">
           <span>{t('Get connected with me')} :</span>
         </div>
+
         <div>
           <a
             target="_blank"
-            href="https://www.instagram.com/a.dall95/"
+            href={INSTAGRAM_LINK}
             className="me-4 text-reset"
             rel="noreferrer"
           >
             <Icon icon="akar-icons:instagram-fill" />
           </a>
+
           <a
             target="_blank"
-            href="https://www.linkedin.com/in/alfredo-sergio-dallari-700864118/"
+            href={LINKEDIN_LINK}
             className="me-4 text-reset"
             rel="noreferrer"
           >
             <Icon icon="logos:linkedin-icon" />
           </a>
+
           <a
             target="_blank"
-            href="https://github.com/alfredone270895"
+            href={GITHUB_LINK}
             className="me-4 text-reset"
             rel="noreferrer"
           >
@@ -44,14 +47,16 @@ export const Footer: React.FC<HeaderProps> = ({ t }) => {
           </a>
         </div>
       </section>
-      <section className="">
-        <div className="container text-center text-md-start mt-5">
-          <div className="row mt-3">
-            <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+      <section>
+        <Container className="text-center text-md-start mt-5">
+          <Row className="mt-3">
+            <Col md={3} lg={4} xl={3} className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">{t('About me')}</h6>
               <p>{t('I am a full stack sotware engineer based on Milan')} </p>
-            </div>
-            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            </Col>
+
+            <Col md={2} lg={2} xl={2} className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
                 {t('Technologies')}
               </h6>
@@ -68,8 +73,9 @@ export const Footer: React.FC<HeaderProps> = ({ t }) => {
               <p>
                 <Icon icon="logos:nodejs" />
               </p>
-            </div>
-            <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            </Col>
+
+            <Col md={3} lg={2} xl={2} className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
                 {t('Useful links')}
               </h6>
@@ -93,8 +99,9 @@ export const Footer: React.FC<HeaderProps> = ({ t }) => {
                   {t('Job Experience')}
                 </a>
               </p>
-            </div>
-            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            </Col>
+
+            <Col md={4} lg={3} xl={3} className="mx-auto mb-md-0 mb-4">
               <h6 className="text-uppercase fw-bold mb-4">{t('Contact')}</h6>
               <p>Via trieste 10, Cologno monzese , Milan</p>
               <p>
@@ -106,12 +113,13 @@ export const Footer: React.FC<HeaderProps> = ({ t }) => {
               <p>
                 <Icon icon="fxemoji:cellphone" /> +39 3664935606
               </p>
-            </div>
-          </div>
-        </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
+
       <div className="text-center p-4">
-        © 2021 Copyright:
+        © 2022 Copyright:
         <a className="text-reset fw-bold" href="/">
           Alfredo Dallari Sergio - Made by me
         </a>

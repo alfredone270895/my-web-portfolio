@@ -1,22 +1,11 @@
-import { i18n, TFunction } from 'i18next';
-import { Nav } from 'react-bootstrap';
-import { Navbar } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import LanguageSwitcher from './LanguageSwitcher';
+import { useContext } from 'react';
+import { IntlContext } from '../i18n/context';
 
-type HeaderMenuProps = {
-  t: TFunction;
-  i18n: i18n;
-};
+export const HeaderMenu: React.FC = () => {
+  const { t } = useContext(IntlContext);
 
-/**
- * Header menu of application
- * @param t translation function
- * @param i18n
- * @constructor
- */
-// eslint-disable-next-line @typescript-eslint/no-shadow
-export const HeaderMenu: React.FC<HeaderMenuProps> = ({ t, i18n }) => {
   return (
     <Container fluid>
       <Navbar.Brand href="/">4lFr3do D4ll4ri</Navbar.Brand>
@@ -29,7 +18,7 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = ({ t, i18n }) => {
           <Nav.Link href="/contact">{t('contact')}</Nav.Link>
         </Nav>
         <Nav>
-          <LanguageSwitcher t={t} i18n={i18n} />
+          <LanguageSwitcher />
         </Nav>
       </Navbar.Collapse>
     </Container>
