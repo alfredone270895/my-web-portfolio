@@ -1,7 +1,8 @@
-import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-vertical-timeline-component/style.min.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
+
+import './index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
