@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import mapboxgl, { LngLatLike } from 'mapbox-gl';
+import { IntlContext } from '../../i18n/context';
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiYWxmcmVkb25lOTUiLCJhIjoiY2tuZjF6dDJ2MnFqMDJ1bng2enNlZWtjbiJ9.r_cnkptBHDWp8e0_VKIJnQ';
@@ -9,6 +10,8 @@ mapboxgl.accessToken =
  * @constructor
  */
 const Mapbox: React.FC = () => {
+  const { t } = useContext(IntlContext);
+
   const mapContainerRef = useRef(null);
 
   const [lng, setLng] = useState<number>(9.27834);
@@ -69,9 +72,9 @@ const Mapbox: React.FC = () => {
 
   return (
     <div>
-      <div className="sidebarStyle">
+      <div className="sidebar-style">
         <div>
-          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+          {t('Latitude')}: {lat},{t('Longitude')}: {lng}
         </div>
       </div>
       <div className="map-container" ref={mapContainerRef} />

@@ -1,11 +1,26 @@
-import React, { Suspense } from 'react';
-import { Layout } from './layout';
+import React from 'react';
+import './i18n';
+import { useTranslation } from 'react-i18next';
+import { IntlContext } from './i18n/context';
+import ParticlesBg from 'particles-bg';
+import { Header } from './layout/Header';
+import { AppRoutes } from './routes';
+import { Footer } from './layout/Footer';
 
 function App(): React.ReactElement {
+  const { t } = useTranslation();
+
   return (
-    <Suspense fallback="loading">
-      <Layout />
-    </Suspense>
+    <IntlContext.Provider
+      value={{
+        t,
+      }}
+    >
+      <ParticlesBg type="cobweb" bg={true} />
+      <Header />
+      <AppRoutes />
+      <Footer />
+    </IntlContext.Provider>
   );
 }
 

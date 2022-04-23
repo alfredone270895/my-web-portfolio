@@ -1,5 +1,5 @@
 import { Col, Row } from 'react-bootstrap';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { IntlContext } from '../../../i18n/context';
 import { TimelineImage } from '../../../components/Timeline/TimelineImage';
 import { TimelineTitle } from '../../../components/Timeline/TimelineTitle';
@@ -10,14 +10,14 @@ export const University: React.FC = () => {
   return (
     <>
       <TimelineImage
-        image={'/assets/logos/uni.png'}
-        alt={'Università degli studi di milano'}
+        image="/assets/logos/uni.png"
+        alt="Università degli studi di Milano"
         height={100}
         width={120}
       />
       <TimelineTitle
         title="Università degli studi di milano"
-        subtitle="Bachelor degree"
+        subtitle={t('Bachelor degree')}
         link="https://www.unimi.it/it"
       />
       <Row className="mt-5">

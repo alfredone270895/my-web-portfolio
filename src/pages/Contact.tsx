@@ -1,11 +1,14 @@
 import { Container } from 'react-bootstrap';
 
 import Mapbox from '../components/Mapbox/index';
+import React from 'react';
 
-export const Contact: React.FC = () => {
+const Contact: React.FC = () => {
   return (
     <Container>
       <Mapbox />
     </Container>
   );
 };
+
+export default Contact;

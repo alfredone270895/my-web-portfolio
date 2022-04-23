@@ -1,10 +1,13 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
+import { useContext } from 'react';
 
 import { TimelineTitle } from '../../../components/Timeline/TimelineTitle';
 import { LineBreak } from '../../../components/LineBreak';
+import { IntlContext } from '../../../i18n/context';
 
 export const Dils: React.FC = () => {
+  const { t } = useContext(IntlContext);
   return (
     <Container fluid>
       <TimelineTitle
@@ -14,8 +17,7 @@ export const Dils: React.FC = () => {
       />
       <Row className="mt-5">
         <Col>
-          Implementing and creating application written in
-          <LineBreak />
+          {t('Implementing coding CRM application written in')}
           <LineBreak />
           <strong>Frontend:</strong>
           <Icon width={50} icon="vscode-icons:file-type-reactjs" />
@@ -29,12 +31,10 @@ export const Dils: React.FC = () => {
       </Row>
       <Row className="mt-5">
         <Col>
-          CRM for internal usage, Continuous integration with
-          <Icon icon="akar-icons:github-fill" /> and
-          <Icon icon="logos:aws-ec2" /> using conventional commits and branches,{' '}
           <LineBreak />
-          <Icon icon="bi:wordpress" width={50} /> site bug fixing using
-          <Icon icon="logos:laravel" /> with sage and
+          <Icon icon="bi:wordpress" width={50} />{' '}
+          {t('Site features and bug fixing using')}
+          <Icon icon="logos:laravel" />
           <Icon icon="logos:vue" />
         </Col>
       </Row>

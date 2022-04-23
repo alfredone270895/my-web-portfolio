@@ -2,6 +2,7 @@ import { Navbar } from 'react-bootstrap';
 import Headroom from 'react-headroom';
 
 import { HeaderMenu } from './HeaderMenu';
+import React from 'react';
 
 export const Header: React.FC = () => {
   return (

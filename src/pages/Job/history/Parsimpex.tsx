@@ -18,41 +18,48 @@ export const Parsimpex: React.FC = () => {
       />
       <Row className="mt-5">
         <Col>
-          {t('I started as an intern in') +
-            '<strong>2015</strong>' +
-            t(
-              'supported by an external company from lecco in the development of management software.',
-            )}
+          {t(
+            'I started as an intern in 2015 supported by an external company from lecco in the development of management software',
+          )}
+        </Col>
+      </Row>
+      <Row className="mt-2">
+        <Col>
+          {t('My initial figure was fixing bugs and implementing new features')}
+          .
+          <LineBreak />
+          {t(
+            'I was also in charge of fixing the emails of PCs with mail servers',
+          )}
+          .
+          <LineBreak />
+          {t(
+            'Because of malformated and deprecated code written in Php 5 i decide to rewrite the CRM',
+          )}
+          .
         </Col>
       </Row>
       <Row className="mt-2">
         <Col>
           {t(
-            'My initial figure was fixing bugs and implementing new features.' +
-              'I was also in charge of fixing the emails of PCs with mail servers. ' +
-              'After two years of work on the old management software we decided to ' +
-              'rewrite it because of deprecated and malformated code structure.',
+            'I took care to analyze, coding and redesigning the management system',
           )}
         </Col>
       </Row>
       <Row className="mt-2">
         <Col>
           {t(
-            'I took care of studying, rewriting and redesigning the management system',
+            'I took care of managing the servers in the cloud and writing the database',
           )}
-        </Col>
-      </Row>
-      <Row className="mt-2">
-        <Col>
-          {t('Designed several REST and SOAP api')} <LineBreak />
-          {t('The database has more than 200 entities')}
+          <LineBreak />
+          {t('Designed and Implemented several REST and SOAP api')}
         </Col>
       </Row>
       <Row className="mt-2">
         <Col>
           {t('Working on')} <Icon icon="logos:centos" width={50} /> WHM /
-          <Icon icon="logos:cpanel" width={50} />, {t('I know well')}
-          <Icon icon="logos:linux-tux" width={50} />,
+          <Icon icon="logos:cpanel" width={50} />
+          <Icon icon="logos:linux-tux" width={50} />
           {t('environment and shell commands')}
         </Col>
       </Row>

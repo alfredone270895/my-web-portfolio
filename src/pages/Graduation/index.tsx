@@ -2,14 +2,14 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Icon } from '@iconify/react';
 
 import { University } from './history/University';
 import { Diploma } from './history/Diploma';
 import { createDateRangeFormat } from '../../utils/date';
 
-export const Graduation: React.FC = () => {
+const Graduation: React.FC = () => {
   return (
     <Fragment>
       <VerticalTimeline>
@@ -41,3 +41,4 @@ export const Graduation: React.FC = () => {
     </Fragment>
   );
 };
+export default Graduation;

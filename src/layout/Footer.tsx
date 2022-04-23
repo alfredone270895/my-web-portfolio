@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { IntlContext } from '../i18n/context';
 import { Col, Container, Row } from 'react-bootstrap';
 
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
           <Row className="mt-3">
             <Col md={3} lg={4} xl={3} className="mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">{t('About me')}</h6>
-              <p>{t('I am a full stack sotware engineer based on Milan')} </p>
+              <p>{t('I am a full stack software engineer based on Milan')} </p>
             </Col>
 
             <Col md={2} lg={2} xl={2} className="mx-auto mb-4">
@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
               </p>
               <p>
                 <a href="/job-experience" className="text-reset">
-                  {t('Job Experience')}
+                  {t('Job experience')}
                 </a>
               </p>
             </Col>
@@ -121,7 +121,7 @@ export const Footer: React.FC = () => {
       <div className="text-center p-4">
         © 2022 Copyright:
         <a className="text-reset fw-bold" href="/">
-          Alfredo Dallari Sergio - Made by me
+          Alfredo Dallari Sergio - {t('Made by me')}
         </a>
       </div>
     </footer>

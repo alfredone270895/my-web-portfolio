@@ -2,7 +2,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
-import { Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { Icon } from '@iconify/react';
 
 import { Parsimpex } from './history/Parsimpex';
@@ -10,7 +10,7 @@ import { ValoreAiVeterani } from './history/ValoreAiVeterani';
 import { Dils } from './history/Dils';
 import { createDateRangeFormat } from '../../utils/date';
 
-export const JobExperience: React.FC = () => {
+const JobExperience: React.FC = () => {
   return (
     <Fragment>
       <VerticalTimeline>
@@ -54,3 +54,5 @@ export const JobExperience: React.FC = () => {
     </Fragment>
   );
 };
+
+export default JobExperience;

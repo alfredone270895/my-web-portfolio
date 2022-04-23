@@ -1,34 +1,26 @@
 import i18n from 'i18next';
-import i18next from 'i18next';
+import i18next, { ModuleType } from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import Backend from 'i18next-http-backend';
 
-const resources = {
-  en: {
-    translation: {
-      tecnologyUsed: 'Technologies',
-      contact: 'Contact',
-      graduation: 'Graduation',
-      jobExperience: 'Job experience',
-    },
+const LanguageDetector = {
+  type: 'languageDetector' as ModuleType,
+  detect: () => {
+    return localStorage.getItem('language') ?? navigator.language;
   },
-  it: {
-    translation: {
-      contact: 'Contatti',
-      graduation: 'Istruzione',
-      jobExperience: 'Esperienze lavorative',
-      tecnologyUsed: 'Tecnologie',
-      Language: 'Lingua',
-    },
-  },
+  init: () => {},
+  cacheUserLanguage: () => {},
 };
 
-// TODO Use application backend api
-i18next.use(initReactI18next).init({
-  resources,
-  lng: localStorage.getItem('language') ?? 'it',
-  interpolation: {
-    escapeValue: false,
-  },
-});
+i18next
+  .use(LanguageDetector)
+  .use(Backend)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'en-US',
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 
 export default i18n;

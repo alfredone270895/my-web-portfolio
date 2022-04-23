@@ -1,4 +1,5 @@
 import { Col, Row } from 'react-bootstrap';
+import React from 'react';
 
 type TimelineImageProps = {
   image: string;
