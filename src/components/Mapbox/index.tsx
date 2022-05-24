@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import mapboxgl, { LngLatLike } from 'mapbox-gl';
-import { IntlContext } from '../../i18n/context';
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoiYWxmcmVkb25lOTUiLCJhIjoiY2tuZjF6dDJ2MnFqMDJ1bng2enNlZWtjbiJ9.r_cnkptBHDWp8e0_VKIJnQ';
@@ -10,8 +9,6 @@ mapboxgl.accessToken =
  * @constructor
  */
 const Mapbox: React.FC = () => {
-  const { t } = useContext(IntlContext);
-
   const mapContainerRef = useRef(null);
 
   const [lng, setLng] = useState<number>(9.27834);
@@ -70,24 +67,11 @@ const Mapbox: React.FC = () => {
     }
   }, []);
 
-  return (
-    <div>
-      <div className="sidebar-style">
-        <div>
-          {t('Latitude')}: {lat},{t('Longitude')}: {lng}
-        </div>
-      </div>
-      <div className="map-container" ref={mapContainerRef} />
-    </div>
-  );
+  return <div className="map-container" ref={mapContainerRef} />;
 };
 
-// The following is required to stop "npm build" from transpiling mapbox code.
-// notice the exclamation point in the import.
-// @ts-ignore
-// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
-mapboxgl.workerClass =
-  // eslint-disable-next-line import/no-webpack-loader-syntax
-  require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+//mapboxgl.workerClass =
+// eslint-disable-next-line import/no-webpack-loader-syntax
+//require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 export default Mapbox;

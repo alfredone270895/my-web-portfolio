@@ -1,6 +1,12 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {
+  AuthenticationContext,
+  AuthenticationContextType,
+} from 'api/auth/context';
+import React, { Suspense, useContext } from 'react';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Loading } from '../components/Loading';
+import Login from '../app/auth/Login';
+import ClassDiagram from '../app/dashboard/ClassDiagram';
 
 const Home = React.lazy(() => import('../pages/Home'));
 const JobExperience = React.lazy(() => import('../pages/Job'));
@@ -9,6 +15,10 @@ const Technology = React.lazy(() => import('../pages/Technology'));
 const Contact = React.lazy(() => import('../pages/Contact'));
 
 export const AppRoutes: React.FC = () => {
+  const { isAuthenticated } = useContext<AuthenticationContextType>(
+    AuthenticationContext,
+  );
+
   return (
     <BrowserRouter>
       <Routes>
@@ -52,6 +62,57 @@ export const AppRoutes: React.FC = () => {
             </Suspense>
           }
         />
+
+        <Route
+          path="/login"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Login />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/register"
+          element={
+            <Suspense fallback={<Loading />}>
+              <JobExperience />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/password-forget"
+          element={
+            <Suspense fallback={<Loading />}>
+              <JobExperience />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/device"
+          element={
+            <Suspense fallback={<Loading />}>
+              <JobExperience />
+            </Suspense>
+          }
+        />
+
+        {isAuthenticated && (
+          <Route
+            path="/dashboard"
+            element={
+              <Suspense fallback={<Loading />}>
+                <ClassDiagram />
+              </Suspense>
+            }
+          />
+        )}
+
+        {!isAuthenticated && (
+          <Route path="*" element={<Navigate replace to="/" />} />
+        )}
       </Routes>
     </BrowserRouter>
   );

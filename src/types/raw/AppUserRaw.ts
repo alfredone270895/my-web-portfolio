@@ -1,0 +1,35 @@
+import { AccessTokenRaw } from './AccessTokenRaw';
+import { ChatRaw } from './ChatRaw';
+import { NotificationRaw } from './NotificationRaw';
+import { SessionRaw } from './SessionRaw';
+import { UserActivityRaw } from './UserActivityRaw';
+import { UserDeviceRaw } from './UserDeviceRaw';
+import { UserDocumentRaw } from './UserDocumentRaw';
+import { UserRoleRaw } from './UserRoleRaw';
+import { PersonRaw } from './PersonRaw';
+
+export type AppUserRaw = {
+  id: number;
+  instance: string;
+  password: string;
+  email: string;
+  created_at: Date;
+  role_id: string;
+  email_confirm: number;
+  newsletter: boolean;
+  person_id: number;
+  username: string;
+  privacy: boolean;
+  marketing: boolean;
+  updated_at: Date;
+  is_admin: boolean;
+  role?: UserRoleRaw;
+  person?: PersonRaw;
+  access_tokens?: AccessTokenRaw[];
+  chats?: ChatRaw[];
+  notifications?: NotificationRaw[];
+  sessions?: SessionRaw[];
+  user_activities?: UserActivityRaw[];
+  user_devices?: UserDeviceRaw[];
+  user_documents?: UserDocumentRaw[];
+};

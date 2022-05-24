@@ -17,7 +17,7 @@ export const Dils: React.FC = () => {
       />
       <Row className="mt-5">
         <Col>
-          {t('Implementing coding CRM application written in')}
+          {t('Implementing and coding CRM application written in')}
           <LineBreak />
           <strong>Frontend:</strong>
           <Icon width={50} icon="vscode-icons:file-type-reactjs" />

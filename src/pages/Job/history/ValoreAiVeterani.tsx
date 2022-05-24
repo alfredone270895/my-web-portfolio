@@ -26,7 +26,7 @@ export const ValoreAiVeterani: React.FC = () => {
       <Row className="mt-5">
         <Col>
           {t(
-            'Worked for a non profit system as head of development of platform as designer, system administrator and coder, for integration of veterans from the world of work',
+            'Contributed for a non profit system as head of development of platform as designer, system administrator and coder, for integration of veterans from the world of work',
           )}
           <LineBreak />
           <strong>Frontend:</strong>

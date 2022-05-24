@@ -1,7 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import TypeWriterEffect, { TypewriterClass } from 'typewriter-effect';
 import { typeWriterEffectReload } from '../utils/typewriter';
-import React, { useContext, useMemo } from 'react';
+import React, { useContext, useEffect, useMemo } from 'react';
 import { IntlContext } from '../i18n/context';
 
 const Home: React.FC = () => {
@@ -19,21 +18,15 @@ const Home: React.FC = () => {
     [t],
   );
 
+  useEffect(() => {
+    typeWriterEffectReload(TYPE_WRITER_STRINGS);
+  }, []);
+
   return (
     <Container fluid className="vh-100">
       <Row className="position-absolute top-50 start-50 translate-middle text-opacity-25">
         <Col lg={12}>
-          <h2>
-            <TypeWriterEffect
-              options={{
-                autoStart: true,
-                loop: true,
-              }}
-              onInit={(typewriter: TypewriterClass): void =>
-                typeWriterEffectReload(typewriter, TYPE_WRITER_STRINGS)
-              }
-            />
-          </h2>
+          <h2 className="type-text" />
         </Col>
       </Row>
     </Container>

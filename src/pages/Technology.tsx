@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 import ParticlesBg from 'particles-bg';
 import React, { useContext } from 'react';
 import { IntlContext } from '../i18n/context';
+import { LineBreak } from '../components/LineBreak';
 
 const Technology: React.FC = () => {
   const { t } = useContext(IntlContext);
@@ -27,13 +28,16 @@ const Technology: React.FC = () => {
       <Row className="mt-5 ">
         <Col>
           <Card>
-            <Card.Body>
-              <Card.Title>
-                <Icon icon="logos:javascript" width={100} />{' '}
+            <Card.Header>
+              <div className="card-icon text-center">
+                <Icon className="icon" icon="logos:javascript" width={100} />
+                <LineBreak />
                 {t('more than year work experience', {
                   year: '5',
                 })}
-              </Card.Title>
+              </div>
+            </Card.Header>
+            <Card.Body>
               <Card.Subtitle className="mb-2 text-muted">
                 <Icon icon="logos:react" width={50} />{' '}
                 {t('more than year work experience', {
@@ -59,7 +63,7 @@ const Technology: React.FC = () => {
                 })}
               </Card.Subtitle>
               <Card.Subtitle className="mb-2 text-muted">
-                <Icon icon="logos:graphql" width={50} /> {t('Online courses')}
+                <Icon icon="logos:graphql" width={50} /> Online courses
               </Card.Subtitle>
             </Card.Body>
           </Card>
@@ -96,7 +100,7 @@ const Technology: React.FC = () => {
                 })}
               </Card.Title>
               <Card.Title>
-                <Icon icon="logos:mongodb" width={100} /> {t('Online courses')}
+                <Icon icon="logos:mongodb" width={100} /> Online courses
               </Card.Title>
             </Card.Body>
           </Card>
@@ -125,7 +129,7 @@ const Technology: React.FC = () => {
             <Card.Body>
               <Card.Title>
                 <Icon icon="tabler:brand-react-native" width={50} /> Native
-                react {t('Online courses')}
+                react online courses
               </Card.Title>
             </Card.Body>
           </Card>

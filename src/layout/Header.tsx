@@ -1,23 +1,19 @@
 import { Navbar } from 'react-bootstrap';
-import Headroom from 'react-headroom';
 
 import { HeaderMenu } from './HeaderMenu';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { initializeHeadroom } from './utils/headroom';
 
 export const Header: React.FC = () => {
+  useEffect(() => {
+    initializeHeadroom();
+  }, []);
+
   return (
-    <>
-      <Headroom
-        onPin={() => console.log('pinned')}
-        onUnpin={() => console.log('unpinned')}
-        style={{
-          boxShadow: '1px 1px 1px rgba(0,0,0,0.25)',
-        }}
-      >
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <HeaderMenu />
-        </Navbar>
-      </Headroom>
-    </>
+    <div id="site-header">
+      <Navbar collapseOnSelect expand="lg">
+        <HeaderMenu />
+      </Navbar>
+    </div>
   );
 };
