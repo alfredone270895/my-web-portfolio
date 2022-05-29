@@ -1,26 +1,18 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import { typeWriterEffectReload } from '../utils/typewriter';
-import React, { useContext, useEffect, useMemo } from 'react';
-import { IntlContext } from '../i18n/context';
+import { useTypeWriterEffectReload } from '../utils/useTypewriter';
+import React from 'react';
+
+const typeWriterStrings = [
+  "Hey there, I'm Alfredo",
+  'Full stack software engineer',
+  'Based in Milan',
+  'Passionate by tech',
+  'Passionate by sport',
+  'Passionate by nature and life',
+];
 
 const Home: React.FC = () => {
-  const { t } = useContext(IntlContext);
-
-  const TYPE_WRITER_STRINGS = useMemo(
-    () => [
-      `${t("Hey there, I'm Alfredo")} 👽`,
-      `${t('Full stack software engineer')} ‍💻`,
-      `${t('Based in Milan')}  🌃💻`,
-      `${t('Appassionate by tech')} 🚀`,
-      `${t('Appassionate by sport')} 🏋`,
-      `${t('Appassionate by Nature and Life')} 🦁`,
-    ],
-    [t],
-  );
-
-  useEffect(() => {
-    typeWriterEffectReload(TYPE_WRITER_STRINGS);
-  }, []);
+  useTypeWriterEffectReload(typeWriterStrings, 'type-text');
 
   return (
     <Container fluid className="vh-100">

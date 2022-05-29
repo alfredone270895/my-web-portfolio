@@ -32,6 +32,8 @@ const LanguageSwitcher: React.FC = () => {
       {LANGUAGE_OPTIONS.map((item) => (
         <NavDropdown.Item
           key={item.value}
+          disabled={i18n.language === item.value}
+          active={i18n.language === item.value}
           onClick={() => {
             i18n.changeLanguage(item.value);
             localStorage.setItem('language', item.value);
