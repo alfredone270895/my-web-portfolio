@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react';
 
 export const SMARTPHONE_BREAKPOINT = 768;
 
-function getWindowDimensions() {
+export type WidthHeight = { width: number; height: number };
+
+/**
+ * Getting windows dimension
+ */
+function getWindowDimensions(): WidthHeight {
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
@@ -10,10 +15,7 @@ function getWindowDimensions() {
   };
 }
 
-export default function useWindowDimensions(): {
-  width: number;
-  height: number;
-} {
+export default function useWindowDimensions(): WidthHeight {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions(),
   );

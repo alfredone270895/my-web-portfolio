@@ -18,6 +18,7 @@ export const useTypeWriterEffectReload = (
   let textToBeTypedIndex = 0;
   let index = 0;
   let timeout: NodeJS.Timeout;
+  let secondTimeout: NodeJS.Timeout;
 
   const typeText = document.querySelector(`.${divClass}`);
 
@@ -33,7 +34,7 @@ export const useTypeWriterEffectReload = (
               index > translate(typeWriterStrings[textToBeTypedIndex]).length
             ) {
               isAdding = false;
-              setTimeout(function () {
+              secondTimeout = setTimeout(function () {
                 playAnim(translate);
               }, 2000);
               return;
@@ -58,6 +59,7 @@ export const useTypeWriterEffectReload = (
 
   i18n.on('languageChanged', () => {
     clearTimeout(timeout);
+    clearTimeout(secondTimeout);
   });
 
   playAnim(t);

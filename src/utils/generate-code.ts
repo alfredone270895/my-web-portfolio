@@ -17,6 +17,10 @@ import { ${apiFunction} } from 'api/${apiDir}/${apiFunction}';
 import { InteractionContext } from 'context/interaction';`;
 };
 
+/**
+ * Set the initial values for create forms
+ * @param type
+ */
 const switchInitialValues = (type: string) => {
   switch (type) {
     case 'character varying':
@@ -30,6 +34,11 @@ const switchInitialValues = (type: string) => {
   }
 };
 
+/**
+ * Switch yup information for the default required fields
+ * @param type
+ * @param isNullable
+ */
 const switchYup = (type: string, isNullable: boolean | undefined) => {
   switch (type) {
     case 'character varying':

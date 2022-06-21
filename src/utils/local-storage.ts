@@ -1,3 +1,7 @@
+/**
+ * Remove a key=>value on local storage with key name
+ * @param key
+ */
 export function removeStorage(key: string) {
   try {
     localStorage.removeItem(key);
@@ -13,6 +17,10 @@ export function removeStorage(key: string) {
   return true;
 }
 
+/**
+ * Get storage key value with key id
+ * @param key
+ */
 export function getStorage(key: string) {
   const now = Date.now(); // epoch time, lets deal only with integer
   // set expiration for storage
@@ -40,6 +48,12 @@ export function getStorage(key: string) {
   }
 }
 
+/**
+ * Set a storage key with value and expire date
+ * @param key
+ * @param value
+ * @param expires
+ */
 export function setStorage(key: string, value: string, expires?: number) {
   if (expires === undefined || expires === null) {
     const now = Date.now(); // millisecs since epoch time, lets deal only with integer
