@@ -57,10 +57,10 @@ export const useTypeWriterEffectReload = (
     );
   };
 
+  playAnim(t);
+
   i18n.on('languageChanged', () => {
     clearTimeout(timeout);
     clearTimeout(secondTimeout);
   });
-
-  playAnim(t);
 };
