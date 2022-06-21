@@ -4,6 +4,7 @@ import { NavDropdown } from 'react-bootstrap';
 
 import { useTranslation } from 'react-i18next';
 import { IntlContext } from '../i18n/context';
+import { setStorage } from '../utils/local-storage';
 
 const LANGUAGE_OPTIONS: {
   value: string;
@@ -36,7 +37,7 @@ const LanguageSwitcher: React.FC = () => {
           active={i18n.language === item.value}
           onClick={() => {
             i18n.changeLanguage(item.value);
-            localStorage.setItem('language', item.value);
+            setStorage('language', item.value);
           }}
           href="#"
         >

@@ -29,6 +29,7 @@ export const AppRoutes: React.FC = () => {
           if (!route.needAuth)
             return (
               <Route
+                key={`route-${route.path}`}
                 path={route.path}
                 element={
                   <Suspense fallback={<Loading />}>{route.element}</Suspense>
@@ -39,6 +40,7 @@ export const AppRoutes: React.FC = () => {
           if (route.needAuth && isAuthenticated)
             return (
               <Route
+                key={`route-${route.path}`}
                 path={route.path}
                 element={
                   <Suspense fallback={<Loading />}>{route.element}</Suspense>
