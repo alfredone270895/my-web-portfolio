@@ -7,7 +7,7 @@ import { getStorage } from '../utils/local-storage';
 const LanguageDetector = {
   type: 'languageDetector' as ModuleType,
   detect: () => {
-    return getStorage('language') ?? navigator.language;
+    return getStorage('language') ?? navigator.language ?? 'it-IT';
   },
   init: () => {},
   cacheUserLanguage: () => {},

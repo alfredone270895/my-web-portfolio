@@ -30,6 +30,7 @@ export const useTypeWriterEffectReload = (
           typeText.innerHTML = translate(
             typeWriterStrings[textToBeTypedIndex],
           ).slice(0, index);
+
           if (isAdding) {
             if (
               index > translate(typeWriterStrings[textToBeTypedIndex]).length
@@ -53,17 +54,17 @@ export const useTypeWriterEffectReload = (
           }
           playAnim(translate);
         }
+
+        i18n.on('languageChanged', (lg) => {
+          if (lg !== getStorage('language')) {
+            clearTimeout(timeout);
+            clearTimeout(secondTimeout);
+          }
+        });
       },
       isAdding ? 120 : 60,
     );
   };
 
-  i18n.on('languageChanged', (lg) => {
-    if (lg !== getStorage('language')) {
-      clearTimeout(timeout);
-      clearTimeout(secondTimeout);
-    }
-  });
-
-  setTimeout(() => playAnim(t), 1000);
+  playAnim(t);
 };
