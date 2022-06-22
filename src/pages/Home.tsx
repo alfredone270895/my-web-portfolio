@@ -1,5 +1,5 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import { useTypeWriterEffectReload } from '../utils/useTypewriter';
+import { useTypeWriterEffectReload } from '../hooks/useTypewriter';
 import React from 'react';
 
 const typeWriterStrings = [

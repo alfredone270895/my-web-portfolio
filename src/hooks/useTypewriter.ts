@@ -2,7 +2,7 @@ import { TFunction } from 'i18next';
 import { useContext } from 'react';
 import { IntlContext } from '../i18n/context';
 import { useTranslation } from 'react-i18next';
-import { getStorage } from './local-storage';
+import { getStorage } from '../utils/local-storage';
 
 /**
  * Effect for typewriter, write on screen the strings in array given
@@ -58,12 +58,12 @@ export const useTypeWriterEffectReload = (
     );
   };
 
-  playAnim(t);
-
   i18n.on('languageChanged', (lg) => {
     if (lg !== getStorage('language')) {
       clearTimeout(timeout);
       clearTimeout(secondTimeout);
     }
   });
+
+  setTimeout(() => playAnim(t), 1000);
 };
