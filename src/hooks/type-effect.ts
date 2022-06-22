@@ -1,20 +1,16 @@
-import { TFunction } from 'i18next';
-import { useContext } from 'react';
-import { IntlContext } from '../i18n/context';
-import { useTranslation } from 'react-i18next';
+import { i18n, TFunction } from 'i18next';
 import { getStorage } from '../utils/local-storage';
 
 /**
  * Effect for typewriter, write on screen the strings in array given
  * @return {void}
  */
-export const useTypeWriterEffectReload = (
+export function typeEffect(
   typeWriterStrings: string[],
   divClass: string,
-) => {
-  const { t } = useContext(IntlContext);
-  const { i18n } = useTranslation();
-
+  t: TFunction,
+  i18nFunction: i18n,
+) {
   let isAdding = true;
   let textToBeTypedIndex = 0;
   let index = 0;
@@ -30,7 +26,6 @@ export const useTypeWriterEffectReload = (
           typeText.innerHTML = translate(
             typeWriterStrings[textToBeTypedIndex],
           ).slice(0, index);
-
           if (isAdding) {
             if (
               index > translate(typeWriterStrings[textToBeTypedIndex]).length
@@ -55,7 +50,7 @@ export const useTypeWriterEffectReload = (
           playAnim(translate);
         }
 
-        i18n.on('languageChanged', (lg) => {
+        i18nFunction.on('languageChanged', (lg) => {
           if (lg !== getStorage('language')) {
             clearTimeout(timeout);
             clearTimeout(secondTimeout);
@@ -67,4 +62,4 @@ export const useTypeWriterEffectReload = (
   };
 
   playAnim(t);
-};
+}

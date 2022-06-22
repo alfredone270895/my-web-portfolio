@@ -1,6 +1,8 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import { useTypeWriterEffectReload } from '../hooks/useTypewriter';
-import React from 'react';
+import { typeEffect } from '../hooks/type-effect';
+import React, { useContext, useEffect } from 'react';
+import { IntlContext } from '../i18n/context';
+import { useTranslation } from 'react-i18next';
 
 const typeWriterStrings = [
   "Hey there, I'm Alfredo",
@@ -12,7 +14,12 @@ const typeWriterStrings = [
 ];
 
 const Home: React.FC = () => {
-  useTypeWriterEffectReload(typeWriterStrings, 'type-text');
+  const { t } = useContext(IntlContext);
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    typeEffect(typeWriterStrings, 'type-text', t, i18n);
+  }, [t]);
 
   return (
     <Container fluid className="vh-100">
