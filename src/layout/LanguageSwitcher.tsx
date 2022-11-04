@@ -38,6 +38,7 @@ const LanguageSwitcher: React.FC = () => {
           onClick={() => {
             i18n.changeLanguage(item.value);
             setStorage('language', item.value);
+            window.location.reload();
           }}
           href="#"
         >

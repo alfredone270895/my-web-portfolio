@@ -23,7 +23,7 @@ export const University: React.FC = () => {
       <Row className="mt-5">
         <Col>
           {t(
-            'I have 3 exams missing and I have done my best, working it was not possible for me to stay in progress, I think I will in the next months',
+            'I have 2 exams missing and I have done my best, with working full time was not possible for me to stay in progress, I will in the next months',
           )}
           .
           <LineBreak />
@@ -64,10 +64,10 @@ export const University: React.FC = () => {
           <LineBreak />
           {t('Formal languages and automata')}
           <LineBreak />
+          {t('Network and computers')}
           <LineBreak />
           <strong>{t('Missing exams')}:</strong>
           <LineBreak />
-          {t('Network and computers')}
           <LineBreak />
           {t('Statistics')}
           <LineBreak />
